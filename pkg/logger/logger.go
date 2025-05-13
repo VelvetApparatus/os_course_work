@@ -10,7 +10,7 @@ type LoggerOption func(l *slog.Logger)
 
 func WithField(key string, value any) LoggerOption {
 	return func(l *slog.Logger) {
-		l.With(slog.Any(key, value))
+		l = l.With(slog.Any(key, value))
 	}
 }
 

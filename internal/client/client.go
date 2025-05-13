@@ -9,7 +9,6 @@ import (
 	"io"
 	"net"
 	"os_coursach/internal/server/models"
-	"sync"
 	"time"
 
 	"fyne.io/fyne/v2/app"
@@ -34,8 +33,6 @@ type Client struct {
 	chanA chan []byte
 	connB net.Conn
 	chanB chan []byte
-
-	mu sync.Mutex
 }
 
 func NewClient() Client {
